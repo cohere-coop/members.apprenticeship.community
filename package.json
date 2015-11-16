@@ -1,0 +1,26 @@
+{
+  "name": "members.apprenticeship.community",
+  "version": "1.0.0",
+  "description": "Membership portal for Apprenticeship.Community",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zincmade/members.apprenticeship.community.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zincmade/members.apprenticeship.community/issues"
+  },
+  "homepage": "https://github.com/zincmade/members.apprenticeship.community#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "tap": "^2.2.1",
+    "zombie": "^4.2.1"
+  }
+}
