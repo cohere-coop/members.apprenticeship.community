@@ -1,8 +1,10 @@
-var express = require('express');
+var express = require('express')
+  , flash = require('connect-flash');
 
 
 var app = express();
 
+app.use(flash());
 app.use('/assets', express.static(__dirname + '/public'));
 
 // Accept POST params
@@ -22,7 +24,6 @@ app.get('/', function (req, res, next) {
   res.render('index', { title: "Yo", message: "What's up?" });
   next();
 });
-
 
 
 var server = app.listen(3000, function () {
