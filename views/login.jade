@@ -2,10 +2,11 @@ html
   head
     title!= Memberships
   body
+    p=errors
     form(method="POST", action="/log_in")
       label
         |Email
-        input(type="email", name="email")
+        input(type="email", name="username")
       label
         |Password
         input(type="password", name="password")
