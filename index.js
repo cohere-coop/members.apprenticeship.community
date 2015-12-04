@@ -1,6 +1,9 @@
 var express = require('express')
-  , flash = require('connect-flash');
+  , flash = require('connect-flash')
+  , Database = require('./database');
 
+
+var db = new Database();
 
 var app = express();
 
@@ -13,7 +16,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
-require('./authentication.js').init(app)
+require('./authentication.js').init(app, db)
 
 // Use jade for rendering
 app.set('view engine', 'jade');
