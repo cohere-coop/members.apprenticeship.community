@@ -2,6 +2,7 @@
 # Running the App
 
 1. Install Docker && Docker Compose
+1. Install the node modules: `docker-compose run web npm install`
 1. Run the image: `docker-compose up`
 1. Migrate the database: `docker-compose run web ./node_modules/.bin/db-migrate up`
 1. Seed the database: `docker-compose run web node seeds.js`
