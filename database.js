@@ -8,16 +8,18 @@ var Database = module.exports = function(connectionString) {
 }
 
 Database.prototype.findUserByEmailAndPassword = function(email, password, callback) {
-  this.query('SELECT id, email, password FROM users WHERE email=$1 AND password=$2', [email, password], 
+  this.query('SELECT id, email, password FROM users WHERE email=$1', [email],
              function(err, result) {
+                 //use scrypt to compare the passwords here
               callback(err, result.rows[0])
   });
 }
 
 Database.prototype.createUser = function(email, password, callback) {
+    // here is where we should encrypt the password
  this.query("INSERT INTO users(id, email, password) VALUES (uuid_generate_v4(), $1, $2)", [email, password], function(err, result) {
     callback(err, result.rows)
-  }); 
+  });
 }
 
 Database.prototype.query = function(query, variables, callback) {
@@ -36,4 +38,3 @@ Database.prototype.query = function(query, variables, callback) {
     })
   })
 }
-
