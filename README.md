@@ -13,7 +13,6 @@ While A.C has great conversations in the slack channel on the regular; there's n
 1. Log in with 'test@example.com:password'
 
 
-
 ## Workflow
 
 * Issue is created
