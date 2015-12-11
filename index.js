@@ -24,13 +24,13 @@ app.set('view engine', 'jade');
 
 // home page
 app.get('/', function (req, res, next) {
-    if (req.user) {
-        res.render('dashboard', {email:req.user.email});
-    }
-    else {
-        res.render('index', { title: "Yo", message: "What's up?" });
-    }
-    next();
+  if (req.user) {
+    res.render('dashboard', {email:req.user.email});
+  }
+  else {
+    res.render('index', { title: "Yo", message: "What's up?" });
+  }
+  next();
 });
 
 
