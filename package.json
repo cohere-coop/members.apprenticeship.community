@@ -19,11 +19,14 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "connect-flash": "^0.1.1",
+    "db-migrate": "^0.9.23",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
     "jade": "^1.11.0",
+    "bcrypt":"^0.8.5",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "pg": "^4.4.3",
     "tap": "^2.2.1",
     "zombie": "^4.2.1"
   }

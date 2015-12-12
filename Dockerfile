@@ -1,7 +1,4 @@
-FROM node:5.0
-
-COPY package.json /src/package.json
-RUN  cd /src; npm install
+FROM node:4.2.3
 
 COPY . /src
 

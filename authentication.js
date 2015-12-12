@@ -2,15 +2,6 @@ var passport = require('passport')
     , LocalStrategy = require('passport-local').Strategy
     , session = require('express-session');
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    if (username === "test@example.com" && password === "password") {
-      return done(null, { name: "Person!", email: "test@example.com" });
-    } else {
-      return done(null, false, { message: "You done didn't type the write password" });
-    }
-  }
-))
 
 passport.serializeUser(function(user, done) {
   done(null, JSON.stringify(user))
@@ -20,7 +11,19 @@ passport.deserializeUser(function(user, done) {
   done(null, JSON.parse(user));
 });
 
-exports.init = function(app) {
+exports.init = function(app, db) {
+  passport.use(new LocalStrategy(
+    function(email, password, done) {
+      db.findUserByEmailAndPassword(email, password, function(err, user) {
+        if(user) {
+          return done(null, user);
+        } else {
+          return done(null, false, { message: "Member not found with that email and password" });
+        }
+      });
+    }
+  ))
+
   app.use(session({ secret: 'keyboard dog' }));
 
   app.use(passport.initialize());
