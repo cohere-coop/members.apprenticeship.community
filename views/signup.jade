@@ -1,0 +1,17 @@
+html
+  head
+    title!= Memberships
+  body
+    p=errors
+    form(method="POST", action="/sign_up")
+    label
+     |Name
+     inpute(type="name", name="name")
+    label
+      |Email
+      input(type="email", name="username")
+    label
+      |Password
+      input(type="password", name="password")
+
+      button Sign Up
