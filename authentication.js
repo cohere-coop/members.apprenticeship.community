@@ -47,4 +47,10 @@ exports.init = function(app, db) {
       failureFlash: true
     })
   );
+  //Handle logging out
+  app.get('/log_out', function(req, res) {
+    req.logout();
+
+    res.redirect('/index');
+  });
 }
