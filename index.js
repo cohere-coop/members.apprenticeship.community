@@ -35,11 +35,11 @@ app.get('/', function (req, res, next) {
 
 // sign up
 app.get('/', function (req, res, next) {
-  if (req.user) {
-    res.render('signup', { title:"welcome", message:"Please sign up by entering your name and email"});
+  if (!req.user) {
+    res.render('signup', { title:"welcome", message:"Please sign up by entering your name and email" });
   }
   else {
-    res.render('dashboard', {email:req.useremail});
+    res.render('index', {title: "Yo", message: "What's Up?"});
   }
   next();
 });

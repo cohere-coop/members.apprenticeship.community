@@ -33,6 +33,11 @@ exports.init = function(app, db) {
     res.render('login', { errors: req.flash('error')});
     next();
   });
+  //Sign up page
+  app.get('/sign_up', function(req, res, next) {
+    res.render('signup', {errors: req.flash('error')});
+    next();
+  });
 
   // Handle logging in
   app.post('/log_in',
