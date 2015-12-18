@@ -4,15 +4,16 @@ html
   body
     p=errors
     form(method="POST", action="/sign_up")
-    label
-      |Name
-      input(type="name", name="name")
-    label
-      |Email
-      input(type="email", name="email")
       label
-      |Password
-      input(type="password", name="password")
+        |Name
+        input(type="text", name="name")
+        label
+        |Email
+        input(type="email", name="email")
+        label
+        |Password
+        input(type="password", name="password")
+        button Sign Up
 
-     a(href="/sign_up") Sign up
-     a(href="/cancel") Cancel
+
+     a(href="/") Cancel

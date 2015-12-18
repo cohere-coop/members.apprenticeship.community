@@ -49,7 +49,11 @@ Database.prototype.createUser = function(email, password, callback) {
       callback(err)
     } else {
       self.query("INSERT INTO users(id, email, password) VALUES (uuid_generate_v4(), $1, $2)", [email, hashedPassword], function(err, result) {
-        callback(err, result.rows)
+        if (err) {
+          callback(err)
+        } else {
+          callback(err, result.rows)
+        }
       });
     }
   })

@@ -39,6 +39,19 @@ exports.init = function(app, db) {
     next();
   });
 
+  //Handle signing up
+  app.post('/sign_up', function(req, res, next) {
+    db.createUser(req.body.email, req.body.password, function(err, result) {
+      if(err) {
+        res.render('signup', {errors: err});
+      }
+      else {
+        res.redirect('/');
+      }
+      next();
+    });
+  });
+
   // Handle logging in
   app.post('/log_in',
     passport.authenticate('local', {
