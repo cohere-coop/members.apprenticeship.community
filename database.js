@@ -19,9 +19,12 @@ var comparePassword = function(password, hash, callback) {
 }
 
 Database.prototype.findUserByEmailAndPassword = function(email, password, callback) {
-  this.query('SELECT id, email, password FROM users WHERE email=$1', [email],
+  this.query('SELECT users.* FROM users WHERE email=$1', [email],
   function(err, result) {
     var user = result.rows[0]
+    if (!user) {
+	  return callback("User not found");
+    }
     comparePassword(password, user.password, function(err, isPasswordMatch) {
       if (isPasswordMatch) {
         callback(err, user)

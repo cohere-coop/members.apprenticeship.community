@@ -15,8 +15,10 @@ exports.init = function(app, db) {
   passport.use(new LocalStrategy(
     function(email, password, done) {
       db.findUserByEmailAndPassword(email, password, function(err, user) {
-        if(user) {
+        if(user && user.approved) {
           return done(null, user);
+        } else if (user && !user.approved) {
+          return done(null, false, { message: "Membership is still pending" });
         } else {
           return done(null, false, { message: "Member not found with that email and password" });
         }
