@@ -4,7 +4,8 @@
   "description": "Membership portal for Apprenticeship.Community",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "bootstrap":"load /js/*.js"
   },
   "repository": {
     "type": "git",
