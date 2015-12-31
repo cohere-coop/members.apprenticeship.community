@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "tap test/*.js",
-    "bootstrap":"load /js/*.js"
-  },
+    "bootstrap":"load /js/*.js",
+    "db-migrate": "db-migrate",
+    "test": "tap test/*.js"  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/zincmade/members.apprenticeship.community.git"
@@ -18,13 +19,14 @@
   },
   "homepage": "https://github.com/zincmade/members.apprenticeship.community#readme",
   "dependencies": {
+    "async": "^1.5.0",
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.14.1",
     "connect-flash": "^0.1.1",
     "db-migrate": "^0.9.23",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
     "jade": "^1.11.0",
-    "bcrypt":"^0.8.5",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pg": "^4.4.3",

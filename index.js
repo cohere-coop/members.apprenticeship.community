@@ -33,6 +33,16 @@ app.get('/', function (req, res, next) {
   next();
 });
 
+// sign up
+app.get('/', function (req, res, next) {
+  if (!req.user) {
+    res.render('signup', { title:"welcome", message:"Please sign up by entering your name and email" });
+  }
+  else {
+    res.render('index', {title: "Yo", message: "What's Up?"});
+  }
+  next();
+});
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
