@@ -1,0 +1,16 @@
+- var pageId = "apprenticeship-community"
+doctype html
+html
+  block vars
+  head
+    block title
+      title Apprenticeship.Community
+
+  body(id=pageId)
+    if user
+      a(href="/log_out") Log Out
+    else
+      a(href="/log_in") Log In
+      a(href="/sign_up") Sign up
+
+    block content

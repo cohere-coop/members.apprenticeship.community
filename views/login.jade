@@ -1,15 +1,12 @@
-html
-  head
-    title!= Memberships
-    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
-  body
-    p=errors
-    form(method="POST", action="/log_in")
-      label
-        |Email
-        input(type="email", name="username")
-      label
-        |Password
-        input(type="password", name="password")
+extends ./layout.jade
+block content
+  p=errors
+  form(method="POST", action="/log_in")
+    label
+      |Email
+      input(type="email", name="username")
+    label
+      |Password
+      input(type="password", name="password")
 
-      button Log in
+    button Log in
