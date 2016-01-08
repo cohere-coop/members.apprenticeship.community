@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "tap test/*.js",
-    "bootstrap":"load /js/*.js",
     "db-migrate": "db-migrate"},
   "repository": {
     "type": "git",
