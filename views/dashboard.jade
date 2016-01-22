@@ -1,4 +1,4 @@
-.dashboard
-  p Welcome #{email}
-
-  a(href="/log out") Log out
+extend ./layout
+extend ./navbar
+block content
+  p Welcome #{user.email}

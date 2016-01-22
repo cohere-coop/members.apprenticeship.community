@@ -1,0 +1,18 @@
+- var pageId = "apprenticeship-community"
+doctype html
+html
+  block vars
+  head
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js")
+    link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css")
+    block title
+      title Apprenticeship.Community
+
+  body(id=pageId)
+    if user
+      a(href="/log_out") Log Out
+    else
+      a(href="/log_in") Log In
+      a(href="/sign_up") Sign up
+
+    block content

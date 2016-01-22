@@ -4,9 +4,8 @@
   "description": "Membership portal for Apprenticeship.Community",
   "main": "index.js",
   "scripts": {
-    "db-migrate": "db-migrate",
-    "test": "tap test/*.js"
-  },
+    "test": "tap test/*.js",
+    "db-migrate": "db-migrate"},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/zincmade/members.apprenticeship.community.git"

@@ -25,7 +25,7 @@ app.set('view engine', 'jade');
 // home page
 app.get('/', function (req, res, next) {
   if (req.user) {
-    res.render('dashboard', {email:req.user.email});
+    res.render('dashboard', {user: req.user });
   }
   else {
     res.render('index', { title: "Yo", message: "What's up?" });
